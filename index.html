@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Barber Home | Barbería Profesional a Domicilio</title>
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Share+Tech+Mono&family=Cinzel:wght@700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#07080b',
+                            900: '#0e1017',
+                            850: '#141722',
+                            800: '#1c202d',
+                            700: '#252b3d',
+                            600: '#323a52'
+                        },
+                        barber: {
+                            red: '#dc2626',
+                            'red-hover': '#ef4444',
+                            'red-dark': '#991b1b',
+                            blue: '#2563eb',
+                            'blue-hover': '#3b82f6',
+                            'blue-dark': '#1e40af',
+                            white: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['Share Tech Mono', 'monospace'],
+                        heading: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-dark-950 text-slate-100 font-sans antialiased selection:bg-barber-red selection:text-white">
+
+    <!-- BARBER POLE TOP RIBBON -->
+    <div class="barber-pole-ribbon fixed top-0 left-0 right-0 z-[60]"></div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-[6px] left-0 right-0 z-50 bg-dark-950/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300"
+        id="mainNav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo con Cilindro Giratorio Miniatura -->
+                <a href="#" class="flex items-center gap-3.5 group">
+                    <div class="barber-pole-mini-cylinder flex-shrink-0">
+                        <div class="barber-pole-mini-stripes"></div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-heading text-xl font-extrabold tracking-wider text-white block">VIP
+                                BARBER</span>
+                            <span
+                                class="px-2 py-0.5 rounded bg-barber-blue/20 text-blue-300 font-mono text-[10px] font-bold border border-barber-blue/40">DOMICILIO</span>
+                        </div>
+                        <span
+                            class="text-[11px] font-mono tracking-widest text-gray-300 font-semibold uppercase flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-barber-red barber-live-dot"></span> BARBERÍA
+                            TRADICIONAL
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-7">
+                    <a href="#inicio" class="text-sm font-medium hover:text-barber-blue transition-colors">Inicio</a>
+                    <a href="#servicios" class="text-sm font-medium hover:text-barber-blue transition-colors">Servicios
+                        & Tarifas</a>
+                    <a href="#sena-info"
+                        class="text-sm font-medium hover:text-barber-red transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-barber-red text-xs"></i> Seña & Garantía
+                    </a>
+                    <a href="#como-funciona" class="text-sm font-medium hover:text-barber-blue transition-colors">¿Cómo
+                        Funciona?</a>
+                    <a href="#galeria" class="text-sm font-medium hover:text-barber-blue transition-colors">Estilos</a>
+                    <a href="#faq" class="text-sm font-medium hover:text-barber-blue transition-colors">Preguntas</a>
+                    <button type="button" id="navFinanceBtn"
+                        class="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-sans">
+                        <i class="fa-solid fa-chart-pie text-xs"></i> Costos & Inventario
+                    </button>
+                </div>
+
+                <!-- Action Button -->
+                <div class="flex items-center gap-2">
+                    <a href="https://wa.me/5493757632529?text=Hola!%20Quisiera%20consultar%20por%20un%20turno%20de%20barber%C3%ADa%20a%20domicilio"
+                        target="_blank" id="navWhatsAppBtn" title="Chatear por WhatsApp (+54 3757 632529)"
+                        class="px-3 py-2.5 rounded-xl bg-dark-900 hover:bg-emerald-950/60 text-emerald-400 font-mono text-xs font-bold border border-emerald-500/40 hover:border-emerald-400 transition flex items-center gap-1.5 shadow-sm shadow-emerald-500/10">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span class="hidden lg:inline">WhatsApp</span>
+                    </a>
+                    <button id="openFinanceBtn" title="Costos Fijos, Inventario e Inversión Inicial"
+                        class="px-3 py-2.5 rounded-xl bg-dark-900 hover:bg-dark-850 text-xs text-emerald-400 font-mono font-bold border border-emerald-500/40 hover:border-emerald-500 transition flex items-center gap-1.5 shadow-sm shadow-emerald-500/10">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span class="hidden xl:inline">Costos & Inventario</span>
+                    </button>
+                    <button id="openScheduleManagerBtn" title="Modificar Horarios de Atención"
+                        class="px-3.5 py-2.5 rounded-xl bg-dark-900 hover:bg-dark-850 text-xs text-blue-400 font-mono font-bold border border-barber-blue/40 hover:border-barber-blue transition flex items-center gap-2 shadow-sm shadow-barber-blue/10">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span class="hidden sm:inline">Modificar Horarios</span>
+                    </button>
+                    <a href="#reservar"
+                        class="btn-barber-primary px-5 py-2.5 rounded-xl text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Reservar Turno
+                    </a>
+                    <button id="openAdminBtn" title="Panel de Control del Barbero"
+                        class="px-3 py-2 rounded-xl bg-dark-900 hover:bg-dark-800 text-xs text-gray-300 font-mono transition flex items-center gap-1.5 border border-gray-700">
+                        <i class="fa-solid fa-sliders text-barber-red"></i>
+                        <span class="hidden sm:inline">Panel</span>
+                    </button>
+                </div>
+            </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+        <!-- Dual Neon Ambient Glow: Red on Left, Blue on Right -->
+        <div
+            class="absolute top-1/4 left-1/4 w-[500px] h-[350px] bg-barber-red/12 rounded-full blur-[140px] pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/3 right-1/4 w-[550px] h-[380px] bg-barber-blue/14 rounded-full blur-[140px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-dark-900 border border-barber-red/30 text-rose-300 text-xs font-mono font-semibold tracking-wider backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-barber-blue animate-pulse"></span>
+                        TRADICIÓN BARBERA DIRECTO EN TU PUERTA
+                    </div>
+
+                    <h1
+                        class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        El corte tradicional de barbería <span
+                            class="bg-gradient-to-r from-barber-red via-white to-barber-blue bg-clip-text text-transparent">sin
+                            salir de tu casa</span>.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Toalla caliente al vapor, perfilado a navaja descartable, degradados precisos y puntualidad
+                        garantizada. Llevamos el salón completo a tu living u oficina, cuidando tu tiempo y tu espacio.
+                    </p>
+
+                    <!-- Features Specs Pills (Rojo, Azul, Blanco, Negro) -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left font-mono">
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-dark-900 border border-gray-800">
+                            <i class="fa-solid fa-shield-virus text-barber-red text-xl"></i>
+                            <div>
+                                <p class="text-xs text-white font-bold">100% Higiene</p>
+                                <p class="text-[10px] text-gray-400">Navajas descartables</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-dark-900 border border-gray-800">
+                            <i class="fa-solid fa-lock text-barber-blue text-xl"></i>
+                            <div>
+                                <p class="text-xs text-white font-bold">Reserva con Seña</p>
+                                <p class="text-[10px] text-gray-400">Turno blindado seguro</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 p-3 rounded-xl bg-dark-900 border border-gray-800 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-broom text-white text-xl"></i>
+                            <div>
+                                <p class="text-xs text-white font-bold">Limpieza Total</p>
+                                <p class="text-[10px] text-gray-400">Aspiradora express</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center lg:justify-start">
+                        <a href="#reservar"
+                            class="w-full sm:w-auto px-8 py-4 rounded-xl btn-barber-primary text-base shadow-xl text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check text-lg"></i> Agendar Mi Turno Ahora
+                        </a>
+                        <a href="https://wa.me/5493757632529?text=Hola!%20Tengo%20una%20consulta%20sobre%20el%20servicio%20de%20barber%C3%ADa%20a%20domicilio"
+                            target="_blank" id="heroWhatsAppBtn"
+                            class="w-full sm:w-auto px-6 py-4 rounded-xl bg-dark-900 hover:bg-dark-850 text-white font-semibold text-base border border-gray-700 transition flex items-center justify-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i> Consultar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual: Cilindro Giratorio 3D Tradicional + Tarjeta -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md flex items-center justify-center gap-6">
+
+                        <!-- CILINDRO DE LUZ GIRATORIO TRADICIONAL 3D -->
+                        <div class="barber-pole-hero-wrapper hidden sm:flex">
+                            <div class="barber-pole-sphere-top"></div>
+                            <div class="barber-pole-cap-top"></div>
+                            <div class="barber-pole-hero-cylinder">
+                                <div class="barber-pole-hero-stripes"></div>
+                            </div>
+                            <div class="barber-pole-cap-bottom"></div>
+                        </div>
+
+                        <!-- Showcase Card -->
+                        <div class="flex-1 rounded-2xl bg-dark-900 border border-gray-800 p-6 shadow-2xl space-y-5">
+
+                            <!-- Header Barber Profile -->
+                            <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-dark-950 border-2 border-barber-red flex items-center justify-center text-white text-xl shadow-md">
+                                        <i class="fa-solid fa-scissors"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white text-base">VIP Barber Home</h3>
+                                        <p class="text-xs font-mono text-blue-400">Corte & Barba Móvil</p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-barber-red/20 text-rose-300 border border-barber-red/40 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-barber-red animate-ping"></span> Hoy Disponible
+                                </span>
+                            </div>
+
+                            <!-- Live Stat Boxes -->
+                            <div class="grid grid-cols-3 gap-2.5 text-center font-mono">
+                                <div class="p-3 rounded-xl bg-dark-950 border border-gray-800">
+                                    <p class="text-white font-extrabold text-lg">+850</p>
+                                    <p class="text-[10px] text-gray-400">A Domicilio</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-dark-950 border border-gray-800">
+                                    <p class="text-blue-400 font-extrabold text-lg">4.9 ★</p>
+                                    <p class="text-[10px] text-gray-400">Calificación</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-dark-950 border border-gray-800">
+                                    <p class="text-rose-400 font-extrabold text-lg">100%</p>
+                                    <p class="text-[10px] text-gray-400">Puntualidad</p>
+                                </div>
+                            </div>
+
+                            <!-- Banner de Seguridad Anticancelación -->
+                            <div class="p-3.5 rounded-xl bg-dark-950 border border-barber-blue/30 space-y-1">
+                                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                                    <i class="fa-solid fa-shield-check text-blue-400"></i> Reserva con Seña Protegida
+                                </div>
+                                <p class="text-[11px] text-gray-400 leading-snug">
+                                    Congela tu turno pagando el 30% de seña. Tu horario queda bloqueado y el barbero
+                                    viaja exclusivamente a tu dirección.
+                                </p>
+                            </div>
+
+                            <a href="#reservar"
+                                class="block w-full text-center py-3 rounded-xl bg-dark-800 hover:bg-barber-red text-white font-semibold text-xs tracking-wider uppercase transition border border-gray-700 hover:border-barber-red">
+                                Elegir fecha y horario &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: EXPLICACIÓN DE SEÑA Y GARANTÍA ANTI-ESTAFA -->
+    <section id="sena-info" class="py-14 bg-dark-900 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-5 space-y-3">
+                    <span
+                        class="text-barber-red font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        <i class="fa-solid fa-lock"></i> Política de Seguridad
+                    </span>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white">
+                        ¿Por qué trabajamos con seña de reserva?
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                        Al tratarse de un servicio personalizado a domicilio, el barbero reserva exclusivamente tu
+                        franja horaria y asume los costos de combustible y traslado. La seña evita cancelaciones de
+                        último momento o direcciones falsas, garantizando un compromiso mutuo.
+                    </p>
+                </div>
+
+                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-dark-950 border border-gray-800 space-y-2">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-barber-red/20 text-barber-red flex items-center justify-center text-base">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-xs">Turno Congelado</h4>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">Nadie más podrá tomar tu horario. El tiempo
+                            queda 100% reservado para ti.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-dark-950 border border-gray-800 space-y-2">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-barber-blue/20 text-barber-blue flex items-center justify-center text-base">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-xs">Traslado Seguro</h4>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">Cubre la logística de viaje y asegura la
+                            llegada puntual a tu casa.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-dark-950 border border-gray-800 space-y-2">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-white/10 text-white flex items-center justify-center text-base">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-xs">Saldo en Domicilio</h4>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">El saldo restante lo abonas en efectivo o
+                            transferencia al terminar el corte.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS & PRECIOS ACTUALIZADOS -->
+    <section id="servicios" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-barber-blue font-mono text-xs font-bold uppercase tracking-widest">Catálogo
+                    Oficial</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mt-1">Servicios y Tarifas a
+                    Domicilio</h2>
+                <p class="text-gray-400 text-sm mt-2">Precios transparentes sin costos ocultos. Elige el servicio y
+                    resérvalo a continuación.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesCardsContainer">
+                <!-- 1. Corte Clásico / Fade Moderno -->
+                <div class="tech-service-card p-6 rounded-2xl bg-dark-900 border border-gray-800 hover:border-barber-blue transition-all flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-barber-blue/10 rounded-full blur-xl group-hover:bg-barber-red/15 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-dark-950 border border-gray-700 text-barber-blue flex items-center justify-center text-xl shadow-md group-hover:scale-105 group-hover:border-barber-red group-hover:text-barber-red transition-all">
+                                <i class="fa-solid fa-scissors"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-barber-red/15 text-rose-300 border border-barber-red/30 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-barber-red animate-pulse"></span>Clásico Barber</span>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-barber-blue transition-colors">Corte Clásico / Fade Moderno</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Degradado tradicional o corte a tijera con navaja descartable, líneas definidas y acabado limpio.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-800 mb-5">
+                            <span class="flex items-center gap-1.5 text-xs text-gray-400 font-mono">
+                                <i class="fa-regular fa-clock text-barber-blue"></i> 45 min
+                            </span>
+                            <span class="font-mono text-lg font-extrabold text-white tracking-tight bg-dark-950 px-3 py-1 rounded-lg border border-gray-800">
+                                $10.000
+                            </span>
+                        </div>
+                    </div>
+                    <button onclick="preSelectService('corte-fade')" class="w-full py-2.5 rounded-xl bg-dark-800 hover:bg-barber-red text-white font-bold text-xs transition duration-200 flex items-center justify-center gap-2 border border-gray-700 hover:border-barber-red">
+                        <i class="fa-solid fa-calendar-plus text-xs"></i> Reservar Este Servicio
+                    </button>
+                </div>
+
+                <!-- 2. Corte Infantil -->
+                <div class="tech-service-card p-6 rounded-2xl bg-dark-900 border border-gray-800 hover:border-barber-blue transition-all flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-barber-blue/10 rounded-full blur-xl group-hover:bg-barber-red/15 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-dark-950 border border-gray-700 text-barber-blue flex items-center justify-center text-xl shadow-md group-hover:scale-105 group-hover:border-barber-red group-hover:text-barber-red transition-all">
+                                <i class="fa-solid fa-child"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-barber-red/15 text-rose-300 border border-barber-red/30 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-barber-red animate-pulse"></span>Kids</span>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-barber-blue transition-colors">Corte Infantil</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Corte moderno, cuidadoso y con paciencia para niños y jóvenes (hasta 14 años).</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-800 mb-5">
+                            <span class="flex items-center gap-1.5 text-xs text-gray-400 font-mono">
+                                <i class="fa-regular fa-clock text-barber-blue"></i> 35 min
+                            </span>
+                            <span class="font-mono text-lg font-extrabold text-white tracking-tight bg-dark-950 px-3 py-1 rounded-lg border border-gray-800">
+                                $12.000
+                            </span>
+                        </div>
+                    </div>
+                    <button onclick="preSelectService('corte-infantil')" class="w-full py-2.5 rounded-xl bg-dark-800 hover:bg-barber-red text-white font-bold text-xs transition duration-200 flex items-center justify-center gap-2 border border-gray-700 hover:border-barber-red">
+                        <i class="fa-solid fa-calendar-plus text-xs"></i> Reservar Este Servicio
+                    </button>
+                </div>
+
+                <!-- 3. Combo Padre e Hijo -->
+                <div class="tech-service-card p-6 rounded-2xl bg-dark-900 border border-gray-800 hover:border-barber-blue transition-all flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-barber-blue/10 rounded-full blur-xl group-hover:bg-barber-red/15 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-dark-950 border border-gray-700 text-barber-blue flex items-center justify-center text-xl shadow-md group-hover:scale-105 group-hover:border-barber-red group-hover:text-barber-red transition-all">
+                                <i class="fa-solid fa-people-roof"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-barber-red/15 text-rose-300 border border-barber-red/30 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-barber-red animate-pulse"></span>Promo Dúo</span>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-barber-blue transition-colors">Combo Padre e Hijo</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Dos cortes completos a domicilio en la misma visita. Estilo y comodidad familiar.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-800 mb-5">
+                            <span class="flex items-center gap-1.5 text-xs text-gray-400 font-mono">
+                                <i class="fa-regular fa-clock text-barber-blue"></i> 75 min
+                            </span>
+                            <span class="font-mono text-lg font-extrabold text-white tracking-tight bg-dark-950 px-3 py-1 rounded-lg border border-gray-800">
+                                $18.000
+                            </span>
+                        </div>
+                    </div>
+                    <button onclick="preSelectService('combo-padre-hijo')" class="w-full py-2.5 rounded-xl bg-dark-800 hover:bg-barber-red text-white font-bold text-xs transition duration-200 flex items-center justify-center gap-2 border border-gray-700 hover:border-barber-red">
+                        <i class="fa-solid fa-calendar-plus text-xs"></i> Reservar Este Servicio
+                    </button>
+                </div>
+
+                <!-- 4. Perfilado de Barbas -->
+                <div class="tech-service-card p-6 rounded-2xl bg-dark-900 border border-gray-800 hover:border-barber-blue transition-all flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-barber-blue/10 rounded-full blur-xl group-hover:bg-barber-red/15 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-dark-950 border border-gray-700 text-barber-blue flex items-center justify-center text-xl shadow-md group-hover:scale-105 group-hover:border-barber-red group-hover:text-barber-red transition-all">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-barber-red/15 text-rose-300 border border-barber-red/30 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-barber-red animate-pulse"></span>Navaja & Toalla</span>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-barber-blue transition-colors">Perfilado de Barbas</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Diseño y alineación milimétrica con toalla caliente al vapor, navaja esterilizada y aceites.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-800 mb-5">
+                            <span class="flex items-center gap-1.5 text-xs text-gray-400 font-mono">
+                                <i class="fa-regular fa-clock text-barber-blue"></i> 25 min
+                            </span>
+                            <span class="font-mono text-lg font-extrabold text-white tracking-tight bg-dark-950 px-3 py-1 rounded-lg border border-gray-800">
+                                $3.000
+                            </span>
+                        </div>
+                    </div>
+                    <button onclick="preSelectService('perfilado-barba')" class="w-full py-2.5 rounded-xl bg-dark-800 hover:bg-barber-red text-white font-bold text-xs transition duration-200 flex items-center justify-center gap-2 border border-gray-700 hover:border-barber-red">
+                        <i class="fa-solid fa-calendar-plus text-xs"></i> Reservar Este Servicio
+                    </button>
+                </div>
+
+                <!-- 5. Combo Completo VIP -->
+                <div class="tech-service-card p-6 rounded-2xl bg-dark-900 border border-gray-800 hover:border-barber-blue transition-all flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-barber-blue/10 rounded-full blur-xl group-hover:bg-barber-red/15 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-dark-950 border border-gray-700 text-barber-blue flex items-center justify-center text-xl shadow-md group-hover:scale-105 group-hover:border-barber-red group-hover:text-barber-red transition-all">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-barber-red/15 text-rose-300 border border-barber-red/30 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-barber-red animate-pulse"></span>Servicio Total</span>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-barber-blue transition-colors">Combo Completo VIP</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Corte completo o fade + ritual de barba con toalla caliente + perfilado de cejas.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-800 mb-5">
+                            <span class="flex items-center gap-1.5 text-xs text-gray-400 font-mono">
+                                <i class="fa-regular fa-clock text-barber-blue"></i> 65 min
+                            </span>
+                            <span class="font-mono text-lg font-extrabold text-white tracking-tight bg-dark-950 px-3 py-1 rounded-lg border border-gray-800">
+                                $15.000
+                            </span>
+                        </div>
+                    </div>
+                    <button onclick="preSelectService('combo-vip')" class="w-full py-2.5 rounded-xl bg-dark-800 hover:bg-barber-red text-white font-bold text-xs transition duration-200 flex items-center justify-center gap-2 border border-gray-700 hover:border-barber-red">
+                        <i class="fa-solid fa-calendar-plus text-xs"></i> Reservar Este Servicio
+                    </button>
+                </div>
+
+                <!-- 6. Mascarilla Facial Express -->
+                <div class="tech-service-card p-6 rounded-2xl bg-dark-900 border border-gray-800 hover:border-barber-blue transition-all flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-barber-blue/10 rounded-full blur-xl group-hover:bg-barber-red/15 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-dark-950 border border-gray-700 text-barber-blue flex items-center justify-center text-xl shadow-md group-hover:scale-105 group-hover:border-barber-red group-hover:text-barber-red transition-all">
+                                <i class="fa-solid fa-spray-can-sparkles"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-barber-red/15 text-rose-300 border border-barber-red/30 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-barber-red animate-pulse"></span>Skin Care</span>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-barber-blue transition-colors">Mascarilla Facial Express</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Limpieza facial de puntos negros con mascarilla peel-off exfoliante y loción refrescante.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-800 mb-5">
+                            <span class="flex items-center gap-1.5 text-xs text-gray-400 font-mono">
+                                <i class="fa-regular fa-clock text-barber-blue"></i> 20 min
+                            </span>
+                            <span class="font-mono text-lg font-extrabold text-white tracking-tight bg-dark-950 px-3 py-1 rounded-lg border border-gray-800">
+                                $2.500
+                            </span>
+                        </div>
+                    </div>
+                    <button onclick="preSelectService('mascarilla')" class="w-full py-2.5 rounded-xl bg-dark-800 hover:bg-barber-red text-white font-bold text-xs transition duration-200 flex items-center justify-center gap-2 border border-gray-700 hover:border-barber-red">
+                        <i class="fa-solid fa-calendar-plus text-xs"></i> Reservar Este Servicio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como-funciona" class="py-20 bg-dark-900 border-t border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-barber-red font-mono text-xs font-bold uppercase tracking-widest">Paso a Paso</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mt-1">¿Cómo Funciona la Visita?
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Solo necesitas una silla y un enchufe cercano. Del resto nos
+                    ocupamos nosotros.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 font-mono">
+                <!-- Step 1 -->
+                <div
+                    class="p-6 rounded-2xl bg-dark-950 border border-gray-800 text-center hover:border-barber-blue transition">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-barber-red/20 text-barber-red text-xl font-bold flex items-center justify-center mx-auto mb-4 border border-barber-red/30">
+                        1
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-2 font-sans">Elige tu Turno</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-sans">Selecciona el servicio, día y hora
+                        disponible en el calendario online.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div
+                    class="p-6 rounded-2xl bg-dark-950 border border-gray-800 text-center hover:border-barber-blue transition">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-barber-blue/20 text-barber-blue text-xl font-bold flex items-center justify-center mx-auto mb-4 border border-barber-blue/30">
+                        2
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-2 font-sans">Abona la Seña</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-sans">Transfiere el 30% de seña por Mercado
+                        Pago o banco para congelar tu turno.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div
+                    class="p-6 rounded-2xl bg-dark-950 border border-gray-800 text-center hover:border-barber-blue transition">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-white/10 text-white text-xl font-bold flex items-center justify-center mx-auto mb-4 border border-white/20">
+                        3
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-2 font-sans">Envía Comprobante</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-sans">Envías el mensaje prearmado a WhatsApp
+                        con la captura para confirmar.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div
+                    class="p-6 rounded-2xl bg-dark-950 border border-gray-800 text-center hover:border-barber-blue transition">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-barber-red/20 text-barber-red text-xl font-bold flex items-center justify-center mx-auto mb-4 border border-barber-red/30">
+                        4
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-2 font-sans">¡Corte y Relax!</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-sans">Llegamos puntuales a tu casa, cortamos y
+                        aspiramos todo al terminar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: RESERVA INTERACTIVA (CON SEÑA DE RESERVA) -->
+    <section id="reservar" class="py-20 bg-dark-950 border-t border-gray-800 relative scroll-mt-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-barber-red font-mono text-xs font-bold uppercase tracking-widest">Turnera
+                    Online</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mt-1">Reserva tu Turno en 3 Pasos
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Selecciona servicios, fecha y realiza la seña para asegurar tu
+                    visita a domicilio.</p>
+            </div>
+
+            <!-- Booking Box -->
+            <div class="bg-dark-900 border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <!-- Step Indicators -->
+                <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-800">
+                    <div class="flex items-center gap-3">
+                        <span id="stepBadge1"
+                            class="w-9 h-9 rounded-full bg-barber-red text-white font-mono font-extrabold flex items-center justify-center text-sm shadow-md">1</span>
+                        <div class="hidden sm:block">
+                            <p class="text-xs text-gray-400 font-mono">Paso 1</p>
+                            <p class="text-sm font-bold text-white">Servicios</p>
+                        </div>
+                    </div>
+                    <div class="h-0.5 flex-1 mx-4 bg-gray-800" id="stepLine1"></div>
+                    <div class="flex items-center gap-3">
+                        <span id="stepBadge2"
+                            class="w-9 h-9 rounded-full bg-dark-700 text-gray-400 font-mono font-extrabold flex items-center justify-center text-sm">2</span>
+                        <div class="hidden sm:block">
+                            <p class="text-xs text-gray-400 font-mono">Paso 2</p>
+                            <p class="text-sm font-bold text-gray-300">Fecha y Hora</p>
+                        </div>
+                    </div>
+                    <div class="h-0.5 flex-1 mx-4 bg-gray-800" id="stepLine2"></div>
+                    <div class="flex items-center gap-3">
+                        <span id="stepBadge3"
+                            class="w-9 h-9 rounded-full bg-dark-700 text-gray-400 font-mono font-extrabold flex items-center justify-center text-sm">3</span>
+                        <div class="hidden sm:block">
+                            <p class="text-xs text-gray-400 font-mono">Paso 3</p>
+                            <p class="text-sm font-bold text-gray-300">Domicilio & Seña</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="bookingForm" onsubmit="event.preventDefault();">
+                    <!-- PASO 1: SELECCIÓN DE SERVICIOS -->
+                    <div id="bookingStep1" class="space-y-6">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-check-to-slot text-barber-blue"></i> Selecciona uno o más
+                                servicios:
+                            </h3>
+                            <span class="text-xs font-mono text-gray-400">Combina cortes, barba o mascarilla</span>
+                        </div>
+
+                        <!-- Services Checkbox / Radio List -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="bookingServicesList">
+                            <!-- 1. Corte Clásico / Fade Moderno -->
+                            <div onclick="toggleServiceSelection('corte-fade')" class="service-card-item p-4 rounded-2xl border cursor-pointer flex items-center justify-between gap-3 border-gray-800 bg-dark-900">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-dark-950 text-barber-blue border border-gray-800 flex items-center justify-center text-base transition-all">
+                                        <i class="fa-solid fa-scissors"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                            Corte Clásico / Fade Moderno
+                                            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-barber-blue/15 text-blue-300 border border-barber-blue/30">Clásico Barber</span>
+                                        </h4>
+                                        <div class="flex items-center gap-2.5 text-xs text-gray-400 mt-1">
+                                            <span class="font-mono text-[11px]"><i class="fa-regular fa-clock text-barber-blue"></i> 45 min</span>
+                                            <span class="text-gray-600">•</span>
+                                            <span class="font-mono font-bold text-white text-xs bg-dark-950 px-2 py-0.5 rounded border border-gray-800">$10.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-6 h-6 rounded-lg border border-gray-700 bg-dark-950 flex items-center justify-center text-xs font-bold transition-all">
+                                </div>
+                            </div>
+
+                            <!-- 2. Corte Infantil -->
+                            <div onclick="toggleServiceSelection('corte-infantil')" class="service-card-item p-4 rounded-2xl border cursor-pointer flex items-center justify-between gap-3 border-gray-800 bg-dark-900">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-dark-950 text-barber-blue border border-gray-800 flex items-center justify-center text-base transition-all">
+                                        <i class="fa-solid fa-child"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                            Corte Infantil
+                                            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-barber-blue/15 text-blue-300 border border-barber-blue/30">Kids</span>
+                                        </h4>
+                                        <div class="flex items-center gap-2.5 text-xs text-gray-400 mt-1">
+                                            <span class="font-mono text-[11px]"><i class="fa-regular fa-clock text-barber-blue"></i> 35 min</span>
+                                            <span class="text-gray-600">•</span>
+                                            <span class="font-mono font-bold text-white text-xs bg-dark-950 px-2 py-0.5 rounded border border-gray-800">$12.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-6 h-6 rounded-lg border border-gray-700 bg-dark-950 flex items-center justify-center text-xs font-bold transition-all">
+                                </div>
+                            </div>
+
+                            <!-- 3. Combo Padre e Hijo -->
+                            <div onclick="toggleServiceSelection('combo-padre-hijo')" class="service-card-item p-4 rounded-2xl border cursor-pointer flex items-center justify-between gap-3 border-gray-800 bg-dark-900">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-dark-950 text-barber-blue border border-gray-800 flex items-center justify-center text-base transition-all">
+                                        <i class="fa-solid fa-people-roof"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                            Combo Padre e Hijo
+                                            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-barber-blue/15 text-blue-300 border border-barber-blue/30">Promo Dúo</span>
+                                        </h4>
+                                        <div class="flex items-center gap-2.5 text-xs text-gray-400 mt-1">
+                                            <span class="font-mono text-[11px]"><i class="fa-regular fa-clock text-barber-blue"></i> 75 min</span>
+                                            <span class="text-gray-600">•</span>
+                                            <span class="font-mono font-bold text-white text-xs bg-dark-950 px-2 py-0.5 rounded border border-gray-800">$18.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-6 h-6 rounded-lg border border-gray-700 bg-dark-950 flex items-center justify-center text-xs font-bold transition-all">
+                                </div>
+                            </div>
+
+                            <!-- 4. Perfilado de Barbas -->
+                            <div onclick="toggleServiceSelection('perfilado-barba')" class="service-card-item p-4 rounded-2xl border cursor-pointer flex items-center justify-between gap-3 border-gray-800 bg-dark-900">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-dark-950 text-barber-blue border border-gray-800 flex items-center justify-center text-base transition-all">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                            Perfilado de Barbas
+                                            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-barber-blue/15 text-blue-300 border border-barber-blue/30">Navaja & Toalla</span>
+                                        </h4>
+                                        <div class="flex items-center gap-2.5 text-xs text-gray-400 mt-1">
+                                            <span class="font-mono text-[11px]"><i class="fa-regular fa-clock text-barber-blue"></i> 25 min</span>
+                                            <span class="text-gray-600">•</span>
+                                            <span class="font-mono font-bold text-white text-xs bg-dark-950 px-2 py-0.5 rounded border border-gray-800">$3.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-6 h-6 rounded-lg border border-gray-700 bg-dark-950 flex items-center justify-center text-xs font-bold transition-all">
+                                </div>
+                            </div>
+
+                            <!-- 5. Combo Completo VIP -->
+                            <div onclick="toggleServiceSelection('combo-vip')" class="service-card-item p-4 rounded-2xl border cursor-pointer flex items-center justify-between gap-3 border-gray-800 bg-dark-900">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-dark-950 text-barber-blue border border-gray-800 flex items-center justify-center text-base transition-all">
+                                        <i class="fa-solid fa-crown"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                            Combo Completo VIP
+                                            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-barber-blue/15 text-blue-300 border border-barber-blue/30">Servicio Total</span>
+                                        </h4>
+                                        <div class="flex items-center gap-2.5 text-xs text-gray-400 mt-1">
+                                            <span class="font-mono text-[11px]"><i class="fa-regular fa-clock text-barber-blue"></i> 65 min</span>
+                                            <span class="text-gray-600">•</span>
+                                            <span class="font-mono font-bold text-white text-xs bg-dark-950 px-2 py-0.5 rounded border border-gray-800">$15.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-6 h-6 rounded-lg border border-gray-700 bg-dark-950 flex items-center justify-center text-xs font-bold transition-all">
+                                </div>
+                            </div>
+
+                            <!-- 6. Mascarilla Facial Express -->
+                            <div onclick="toggleServiceSelection('mascarilla')" class="service-card-item p-4 rounded-2xl border cursor-pointer flex items-center justify-between gap-3 border-gray-800 bg-dark-900">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-dark-950 text-barber-blue border border-gray-800 flex items-center justify-center text-base transition-all">
+                                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                            Mascarilla Facial Express
+                                            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-barber-blue/15 text-blue-300 border border-barber-blue/30">Skin Care</span>
+                                        </h4>
+                                        <div class="flex items-center gap-2.5 text-xs text-gray-400 mt-1">
+                                            <span class="font-mono text-[11px]"><i class="fa-regular fa-clock text-barber-blue"></i> 20 min</span>
+                                            <span class="text-gray-600">•</span>
+                                            <span class="font-mono font-bold text-white text-xs bg-dark-950 px-2 py-0.5 rounded border border-gray-800">$2.500</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-6 h-6 rounded-lg border border-gray-700 bg-dark-950 flex items-center justify-center text-xs font-bold transition-all">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Summary Counter in Step 1 con Desglose de Seña -->
+                        <div
+                            class="p-4 rounded-xl bg-dark-950 border border-gray-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+                            <div>
+                                <p class="text-gray-400">Servicios seleccionados: <span id="selectedCountText"
+                                        class="font-bold text-white font-sans">0</span></p>
+                                <p class="text-gray-400">Duración estimada: <span id="selectedDurationText"
+                                        class="font-bold text-blue-400">0 min</span></p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Seña Requerida (30%):</p>
+                                <p class="text-lg font-extrabold text-barber-red" id="selectedDepositText">$0</p>
+                                <p class="text-[10px] text-gray-500">Para congelar turno</p>
+                            </div>
+                            <div class="sm:text-right">
+                                <p class="text-gray-400">Total del Servicio:</p>
+                                <p class="text-xl font-extrabold text-white" id="selectedPriceText">$0</p>
+                                <p class="text-[10px] text-gray-400">Saldo a pagar en casa: <span
+                                        id="selectedBalanceText" class="text-white font-bold">$0</span></p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end pt-2">
+                            <button type="button" id="btnGoToStep2"
+                                class="btn-barber-primary px-6 py-3 rounded-xl text-sm flex items-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                                Continuar a Fecha y Hora &rarr;
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 2: FECHA Y HORA -->
+                    <div id="bookingStep2" class="space-y-6 hidden">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                            <div>
+                                <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-calendar-day text-barber-red"></i> Selecciona el día de tu
+                                    turno:
+                                </h3>
+                                <p class="text-xs text-gray-400 font-mono">Atención de Lunes a Sábados de 09:00 a 20:30
+                                    hs.</p>
+                            </div>
+                            <button type="button" id="step2ModifyScheduleBtn"
+                                class="px-3 py-1.5 rounded-xl bg-dark-950 hover:bg-dark-900 border border-barber-blue/40 hover:border-barber-blue text-blue-300 font-mono text-xs flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-lock text-[10px]"></i> Modificar horarios de este día
+                            </button>
+                        </div>
+
+                        <!-- Day Picker Carousel -->
+                        <div class="flex gap-3 overflow-x-auto pb-3 pt-1 scrollbar-thin scrollbar-thumb-gray-700"
+                            id="datePickerCarousel">
+                            <!-- Injected by JS (next 14 days) -->
+                        </div>
+
+                        <!-- Hour Slot Selector -->
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center justify-between">
+                                <label class="text-sm font-semibold text-gray-200 flex items-center gap-2">
+                                    <i class="fa-regular fa-clock text-barber-blue"></i> Horarios disponibles para <span
+                                        id="selectedDateLabel" class="text-white font-mono font-bold">hoy</span>:
+                                </label>
+                                <span class="text-xs font-mono text-gray-400"><span
+                                        class="inline-block w-2.5 h-2.5 rounded-full bg-barber-blue mr-1"></span>
+                                    Disponible</span>
+                            </div>
+                            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5" id="timeSlotsContainer">
+                                <!-- Time slots generated by JS -->
+                            </div>
+                            <p id="noSlotAlert" class="text-xs text-rose-400 hidden pt-1 font-mono">
+                                <i class="fa-solid fa-circle-exclamation"></i> No quedan horarios disponibles para este
+                                día. Por favor elige otro día.
+                            </p>
+                        </div>
+
+                        <!-- Step 2 Navigation -->
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <button type="button" id="btnBackToStep1"
+                                class="px-5 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-semibold text-sm transition flex items-center gap-2">
+                                &larr; Volver
+                            </button>
+                            <button type="button" id="btnGoToStep3"
+                                class="btn-barber-primary px-6 py-3 rounded-xl text-sm flex items-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                                Continuar a Datos y Seña &rarr;
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 3: DATOS DEL CLIENTE, DOMICILIO Y SEÑA ANTICANCELACIÓN -->
+                    <div id="bookingStep3" class="space-y-6 hidden">
+                        <div>
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-location-dot text-barber-red"></i> ¿A dónde nos dirigimos?
+                            </h3>
+                            <p class="text-xs text-gray-400">Ingresa tus datos exactos y abona la seña para que el
+                                barbero asista a tu domicilio.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Nombre -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5" for="clientName">Nombre
+                                    y Apellido *</label>
+                                <input type="text" id="clientName" required placeholder="Ej: Lucas Martínez"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm">
+                            </div>
+
+                            <!-- Teléfono / WhatsApp -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5"
+                                    for="clientPhone">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="clientPhone" required placeholder="Ej: 11 2345 6789"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm font-mono">
+                            </div>
+
+                            <!-- Dirección -->
+                            <div class="sm:col-span-2">
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5"
+                                    for="clientAddress">Dirección exacta (Calle y Número) *</label>
+                                <input type="text" id="clientAddress" required placeholder="Ej: Av. Rivadavia 4520"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm">
+                            </div>
+
+                            <!-- Piso / Depto -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5" for="clientApt">Piso /
+                                    Depto / Timbre (Opcional)</label>
+                                <input type="text" id="clientApt" placeholder="Ej: Piso 4 Depto B"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm">
+                            </div>
+
+                            <!-- Barrio o Zona -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5" for="clientZone">Barrio
+                                    / Localidad *</label>
+                                <input type="text" id="clientZone" required placeholder="Ej: Caballito / Ramos Mejía"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm">
+                            </div>
+
+                            <!-- Medio de Pago para el Saldo Restante -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5"
+                                    for="paymentMethod">Forma de pago del Saldo en Domicilio *</label>
+                                <select id="paymentMethod"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white focus:outline-none focus:border-barber-blue text-sm">
+                                    <option value="Efectivo al finalizar">Efectivo al finalizar en tu casa</option>
+                                    <option value="Transferencia / Mercado Pago">Transferencia / Mercado Pago al
+                                        finalizar</option>
+                                    <option value="Tarjeta de Débito / Crédito">Tarjeta de Débito / Crédito</option>
+                                </select>
+                            </div>
+
+                            <!-- Comprobante / Titular de la seña -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5"
+                                    for="clientReceiptProof">Titular que transfiere la seña (Opcional)</label>
+                                <input type="text" id="clientReceiptProof"
+                                    placeholder="Ej: Lucas Martínez (Mercado Pago)"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm">
+                            </div>
+
+                            <!-- Notas extra -->
+                            <div class="sm:col-span-2">
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5" for="clientNotes">Notas
+                                    o indicaciones para llegar (Opcional)</label>
+                                <input type="text" id="clientNotes"
+                                    placeholder="Ej: Timbre portón blanco, perro amigable"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm">
+                            </div>
+                        </div>
+
+                        <!-- TARJETA DESTACADA: DATOS PARA PAGAR LA SEÑA DE RESERVA -->
+                        <div class="sena-box-highlight p-5 rounded-2xl space-y-4">
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                                <div class="flex items-center gap-2.5">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-barber-blue/20 text-blue-400 flex items-center justify-center text-sm font-bold">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">Seña de Pago Anticancelación</h4>
+                                        <p class="text-[11px] text-gray-300">Congela tu franja horaria y garantiza el
+                                            traslado a tu puerta</p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-barber-red/20 text-rose-300 border border-barber-red/40">
+                                    Seña a Transferir: <span id="senaCardAmount" class="text-white">$0</span>
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+                                <div
+                                    class="p-3 rounded-xl bg-dark-950 border border-gray-800 flex items-center justify-between">
+                                    <div>
+                                        <span class="text-gray-400 block text-[10px]">ALIAS MERCADO PAGO / BANCO:</span>
+                                        <span id="bankAliasDisplay"
+                                            class="font-bold text-white text-sm">barbero.domicilio.mp</span>
+                                    </div>
+                                    <button type="button" onclick="copyBankAlias()"
+                                        class="px-2.5 py-1.5 rounded-lg bg-dark-800 hover:bg-barber-blue text-gray-200 text-xs font-sans transition flex items-center gap-1 border border-gray-700">
+                                        <i class="fa-solid fa-copy"></i> Copiar
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="p-3 rounded-xl bg-dark-950 border border-gray-800 flex items-center justify-between">
+                                    <div>
+                                        <span class="text-gray-400 block text-[10px]">CBU / CVU:</span>
+                                        <span id="bankCbuDisplay"
+                                            class="font-bold text-white text-xs truncate max-w-[170px] block">0000003100084729104829</span>
+                                    </div>
+                                    <button type="button" onclick="copyBankCbu()"
+                                        class="px-2.5 py-1.5 rounded-lg bg-dark-800 hover:bg-barber-blue text-gray-200 text-xs font-sans transition flex items-center gap-1 border border-gray-700">
+                                        <i class="fa-solid fa-copy"></i> Copiar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <p class="text-[11px] text-gray-400 flex items-center gap-1.5 font-sans">
+                                <i class="fa-solid fa-circle-info text-blue-400"></i>
+                                <span>Titular de la cuenta: <strong id="bankHolderDisplay" class="text-white">Leonardo
+                                        Gómez</strong>. Al presionar confirmar, se abrirá WhatsApp (<strong class="text-emerald-400 font-mono">+54 3757 632529</strong>) con el comprobante para validar tu turno.</span>
+                            </p>
+                        </div>
+
+                        <!-- Final Recap Card -->
+                        <div class="p-4 rounded-2xl bg-dark-950 border border-gray-800 space-y-2">
+                            <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-barber-red">Resumen
+                                Completo del Turno:</h4>
+                            <div class="text-xs text-gray-300 space-y-1 font-mono">
+                                <p><span class="text-gray-400 font-sans">Servicios:</span> <span id="recapServices"
+                                        class="font-semibold text-white font-sans"></span></p>
+                                <p><span class="text-gray-400 font-sans">Fecha y Hora:</span> <span id="recapDateTime"
+                                        class="font-bold text-white"></span></p>
+                                <div class="pt-2 border-t border-gray-800 grid grid-cols-3 gap-2 text-center">
+                                    <div>
+                                        <span class="text-gray-400 block text-[10px] font-sans">Total Servicio:</span>
+                                        <span id="recapTotal" class="font-bold text-white text-sm"></span>
+                                    </div>
+                                    <div class="text-rose-400">
+                                        <span class="text-gray-400 block text-[10px] font-sans">Seña (30%):</span>
+                                        <span id="recapDeposit" class="font-extrabold text-sm"></span>
+                                    </div>
+                                    <div class="text-blue-400">
+                                        <span class="text-gray-400 block text-[10px] font-sans">Saldo en Casa:</span>
+                                        <span id="recapBalance" class="font-extrabold text-sm"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 Navigation -->
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <button type="button" id="btnBackToStep2"
+                                class="px-5 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-semibold text-sm transition flex items-center gap-2">
+                                &larr; Volver
+                            </button>
+                            <button type="button" id="btnSubmitBooking"
+                                class="btn-barber-primary px-7 py-3 rounded-xl text-sm shadow-xl flex items-center gap-2.5 transition">
+                                <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Confirmar y Enviar
+                                Comprobante
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / ESTILOS -->
+    <section id="galeria" class="py-20 bg-dark-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-barber-red font-mono text-xs font-bold uppercase tracking-widest">Portafolio</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mt-1">Nuestros Trabajos y Estilos
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Degradados limpios al ras, navaja descartable y terminación
+                    tradicional impecable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Trabajo Real 1: Fade & Perfilado de Barba -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-dark-950 border border-gray-800 aspect-[4/5] shadow-xl hover:border-barber-red transition-all duration-300">
+                    <img src="../../.gemini/antigravity/brain/59df596d-c03f-4bcf-98fe-53240b432727/.user_uploaded/media_1795185535837_f0e89333.jpg"
+                        onerror="this.onerror=null; this.src='img/trabajo1.jpg';"
+                        alt="Fade Clásico y Perfilado de Barba a Domicilio"
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent flex flex-col justify-end p-5">
+                        <span
+                            class="text-barber-red font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-barber-red animate-pulse"></span> Combo VIP • Domicilio Real
+                        </span>
+                        <h4 class="text-white font-bold text-lg mt-0.5">Fade & Perfilado de Barba</h4>
+                        <p class="text-xs text-gray-300 mt-1">Degradado al ras con navaja, toalla caliente y barba perfilada milimétricamente.</p>
+                    </div>
+                </div>
+
+                <!-- Trabajo Real 2: Skin Fade & Conexión Limpia -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-dark-950 border border-gray-800 aspect-[4/5] shadow-xl hover:border-barber-blue transition-all duration-300">
+                    <img src="../../.gemini/antigravity/brain/59df596d-c03f-4bcf-98fe-53240b432727/.user_uploaded/media_1795185547441_f1a5c78e.jpg"
+                        onerror="this.onerror=null; this.src='img/trabajo2.jpg';"
+                        alt="Skin Fade Moderno a Domicilio"
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent flex flex-col justify-end p-5">
+                        <span class="text-blue-400 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-barber-blue animate-pulse"></span> Fade Moderno • 100% Al Ras
+                        </span>
+                        <h4 class="text-white font-bold text-lg mt-0.5">Skin Fade & Conexión Limpia</h4>
+                        <p class="text-xs text-gray-300 mt-1">Difuminado suave desde cero con máquina VGR-003 profesional y contorno nítido.</p>
+                    </div>
+                </div>
+
+                <!-- Trabajo Real 3: Taper Fade & Doble Línea Freestyle -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-dark-950 border border-gray-800 aspect-[4/5] shadow-xl hover:border-white transition-all duration-300">
+                    <img src="../../.gemini/antigravity/brain/59df596d-c03f-4bcf-98fe-53240b432727/.user_uploaded/media_1795185556909_d0f4fcd7.jpg"
+                        onerror="this.onerror=null; this.src='img/trabajo3.jpg';"
+                        alt="Taper Fade y Diseño Freestyle a Navaja"
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent flex flex-col justify-end p-5">
+                        <span class="text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Freestyle & Navaja
+                        </span>
+                        <h4 class="text-white font-bold text-lg mt-0.5">Taper Fade & Doble Línea</h4>
+                        <p class="text-xs text-gray-300 mt-1">Diseño personalizado a navaja libre con nuca cónica y acabado juvenil moderno.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="py-16 bg-dark-950 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="text-barber-blue font-mono text-xs font-bold uppercase tracking-widest">Opiniones</span>
+                <h2 class="font-heading text-3xl font-bold text-white mt-1">Lo Que Dicen Nuestros Clientes</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="p-6 rounded-2xl bg-dark-900 border border-gray-800 space-y-3">
+                    <div class="flex text-amber-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-300 italic">"Pagar la seña me dio total tranquilidad de que el barbero
+                        iba a venir sí o sí. Llegó 5 minutos antes con todo el kit esterilizado y dejó el piso
+                        impecable."</p>
+                    <div class="pt-2 border-t border-gray-800">
+                        <p class="text-xs font-bold text-white">Martín S.</p>
+                        <p class="text-[11px] text-gray-400">Cliente habitual en Caballito</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="p-6 rounded-2xl bg-dark-900 border border-gray-800 space-y-3">
+                    <div class="flex text-amber-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-300 italic">"El perfilado de barba con toalla caliente es espectacular.
+                        La turnera es clarísima, te da el alias al instante y coordinas todo por WhatsApp."</p>
+                    <div class="pt-2 border-t border-gray-800">
+                        <p class="text-xs font-bold text-white">Ignacio V.</p>
+                        <p class="text-[11px] text-gray-400">Barrio Belgrano</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="p-6 rounded-2xl bg-dark-900 border border-gray-800 space-y-3">
+                    <div class="flex text-amber-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-300 italic">"Contraté el Combo Padre e Hijo. Súper profesional, puntual
+                        y el sistema de seña demuestra el compromiso serio que tienen con el cliente."</p>
+                    <div class="pt-2 border-t border-gray-800">
+                        <p class="text-xs font-bold text-white">Gonzalo R.</p>
+                        <p class="text-[11px] text-gray-400">Combo Padre e Hijo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" class="py-20 bg-dark-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-barber-red font-mono text-xs font-bold uppercase tracking-widest">Dudas
+                    Frecuentes</span>
+                <h2 class="font-heading text-3xl font-extrabold text-white mt-1">Preguntas y Respuestas</h2>
+            </div>
+
+            <div class="space-y-4" id="faqAccordion">
+                <!-- Item 1 -->
+                <div class="rounded-2xl bg-dark-950 border border-gray-800 overflow-hidden">
+                    <button
+                        class="w-full p-5 text-left font-semibold text-white flex justify-between items-center faq-toggle hover:text-barber-blue transition">
+                        <span>¿Por qué se solicita una seña de pago previa?</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-5 pt-0 text-xs text-gray-400 leading-relaxed hidden faq-content">
+                        La seña garantiza el compromiso mutuo: congela tu horario de forma exclusiva en el calendario y
+                        cubre los costos operativos de traslado hasta tu domicilio. El saldo restante lo abonas
+                        cómodamente al terminar el corte.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="rounded-2xl bg-dark-950 border border-gray-800 overflow-hidden">
+                    <button
+                        class="w-full p-5 text-left font-semibold text-white flex justify-between items-center faq-toggle hover:text-barber-blue transition">
+                        <span>¿Qué pasa si necesito reprogramar mi turno?</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-5 pt-0 text-xs text-gray-400 leading-relaxed hidden faq-content">
+                        Si nos avisas con al menos 2 horas de anticipación vía WhatsApp, tu seña queda 100% resguardada
+                        para reprogramar tu turno en otra fecha que te quede cómoda sin perder nada.
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="rounded-2xl bg-dark-950 border border-gray-800 overflow-hidden">
+                    <button
+                        class="w-full p-5 text-left font-semibold text-white flex justify-between items-center faq-toggle hover:text-barber-blue transition">
+                        <span>¿Qué necesito preparar en casa para el barbero?</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-5 pt-0 text-xs text-gray-400 leading-relaxed hidden faq-content">
+                        Únicamente una silla cómoda, un enchufe cercano y un espacio iluminado. Llevamos capa
+                        profesional, toallas limpias, herramientas desinfectadas y aspiradora express para dejar tu
+                        espacio impecable.
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="rounded-2xl bg-dark-950 border border-gray-800 overflow-hidden">
+                    <button
+                        class="w-full p-5 text-left font-semibold text-white flex justify-between items-center faq-toggle hover:text-barber-blue transition">
+                        <span>¿Cuáles son los medios de pago para la seña y el saldo?</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-5 pt-0 text-xs text-gray-400 leading-relaxed hidden faq-content">
+                        La seña se transfiere fácilmente por Mercado Pago (Alias o CVU) o transferencia bancaria. El
+                        saldo final se puede abonar en efectivo, transferencia o tarjeta de débito/crédito en tu
+                        domicilio.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-950 border-t border-gray-800 py-12 text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3.5">
+                    <div class="barber-pole-mini-cylinder flex-shrink-0">
+                        <div class="barber-pole-mini-stripes"></div>
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-white tracking-wider block">VIP BARBER HOME</span>
+                        <span class="text-xs text-gray-500">Barbería móvil & grooming tradicional a domicilio</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6 text-xs flex-wrap justify-center md:justify-end">
+                    <a href="#servicios" class="hover:text-barber-blue">Servicios</a>
+                    <a href="#sena-info" class="hover:text-barber-red">Seña & Seguridad</a>
+                    <a href="#reservar" class="hover:text-barber-blue">Reservar</a>
+                    <a href="#faq" class="hover:text-barber-blue">Preguntas</a>
+                    <a href="https://wa.me/5493757632529?text=Hola!%20Quisiera%20consultar%20por%20el%20servicio%20de%20barber%C3%ADa%20a%20domicilio"
+                        target="_blank" id="footerWhatsAppBtn"
+                        class="hover:text-emerald-400 flex items-center gap-1 font-mono text-emerald-400 font-semibold transition">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp (+54 3757 632529)
+                    </a>
+                    <button id="footerFinanceLink"
+                        class="text-gray-500 hover:text-emerald-400 flex items-center gap-1 font-mono">
+                        <i class="fa-solid fa-chart-pie text-emerald-400"></i> Costos & Inventario
+                    </button>
+                    <button id="footerAdminLink"
+                        class="text-gray-500 hover:text-barber-red flex items-center gap-1 font-mono">
+                        <i class="fa-solid fa-sliders"></i> Panel del Barbero
+                    </button>
+                </div>
+
+                <div class="text-xs text-gray-500 text-center md:text-right font-mono">
+                    © 2026 VIP Barber Home • Tradición, Estilo & Seguridad
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL: CONFIRMACIÓN Y VOUCHER DIGITAL CON SEÑA -->
+    <div id="voucherModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
+        <div
+            class="bg-dark-900 border border-barber-blue/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-scaleUp">
+            <button id="closeVoucherBtn" class="absolute top-5 right-5 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2 mb-6">
+                <div
+                    class="w-14 h-14 bg-barber-blue/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mx-auto border border-barber-blue/30">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-white">¡Reserva Registrada!</h3>
+                <p class="text-xs text-gray-300">Envía el comprobante de la seña por WhatsApp para confirmar y congelar
+                    tu turno.</p>
+            </div>
+
+            <!-- Digital Voucher Ticket Card con desglose de seña -->
+            <div class="rounded-2xl bg-dark-950 border border-gray-800 p-5 space-y-4 relative overflow-hidden">
+                <div class="flex items-center justify-between pb-3 border-b border-dashed border-gray-800">
+                    <div>
+                        <span class="text-[10px] uppercase font-mono font-bold text-blue-400 tracking-wider">Comprobante
+                            de Turno</span>
+                        <p class="text-sm font-mono font-bold text-white" id="voucherCode">#VB-0000</p>
+                    </div>
+                    <span
+                        class="px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold bg-barber-red/20 text-rose-300 border border-barber-red/40">
+                        Pendiente Seña
+                    </span>
+                </div>
+
+                <div class="text-xs space-y-2 text-gray-300 font-mono">
+                    <p><span class="text-gray-500 font-sans">Cliente:</span> <span id="vClientName"
+                            class="font-semibold text-white font-sans"></span></p>
+                    <p><span class="text-gray-500 font-sans">Servicio(s):</span> <span id="vServices"
+                            class="font-semibold text-white font-sans"></span></p>
+                    <p><span class="text-gray-500 font-sans">Fecha y Hora:</span> <span id="vDateTime"
+                            class="font-bold text-white"></span></p>
+                    <p><span class="text-gray-500 font-sans">Dirección:</span> <span id="vAddress"
+                            class="font-semibold text-white font-sans"></span></p>
+
+                    <div class="p-3 rounded-xl bg-dark-900 border border-gray-800 space-y-1.5 my-2">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400 font-sans">Total del servicio:</span>
+                            <span class="text-white font-bold" id="vTotal">$0</span>
+                        </div>
+                        <div class="flex justify-between text-rose-400">
+                            <span class="font-sans font-bold">🔒 Seña para congelar turno:</span>
+                            <span class="font-extrabold text-sm" id="vDeposit">$0</span>
+                        </div>
+                        <div class="flex justify-between text-blue-400">
+                            <span class="font-sans">Saldo a pagar en domicilio:</span>
+                            <span class="font-bold" id="vBalance">$0</span>
+                        </div>
+                        <p class="text-[10px] text-gray-500 pt-1 border-t border-gray-800 font-sans">
+                            Transferir seña al Alias: <strong id="vAlias"
+                                class="text-white font-mono">barbero.domicilio.mp</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 space-y-3">
+                <a id="voucherWhatsAppBtn" href="#" target="_blank"
+                    class="w-full py-3.5 px-4 rounded-xl btn-barber-primary text-sm flex items-center justify-center gap-2 shadow-lg transition">
+                    <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Enviar Comprobante por WhatsApp
+                </a>
+                <button id="btnDownloadVoucher"
+                    class="w-full py-2.5 px-4 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 border border-gray-700 transition font-mono">
+                    <i class="fa-solid fa-copy"></i> Copiar Datos del Turno
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: AUTENTICACIÓN PARA MODIFICAR HORARIOS (CLAVE: colo13579246810gG) -->
+    <div id="scheduleAuthModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
+        <div
+            class="bg-dark-900 border border-barber-blue/50 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative animate-scaleUp">
+            <button id="closeScheduleAuthBtn" class="absolute top-5 right-5 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center space-y-3 mb-6">
+                <div
+                    class="w-14 h-14 bg-dark-950 border-2 border-barber-blue/40 text-barber-blue rounded-2xl flex items-center justify-center text-2xl mx-auto shadow-lg shadow-barber-blue/15">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-white tracking-wide">Acceso del Barbero</h3>
+                <p class="text-xs text-gray-400">Ingresa la contraseña de seguridad para poder modificar los horarios de
+                    atención.</p>
+            </div>
+            <form id="scheduleAuthForm" onsubmit="event.preventDefault(); verifySchedulePassword();">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-mono font-semibold text-gray-300 mb-1.5"
+                            for="schedulePasswordInput">
+                            Contraseña de Seguridad:
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="schedulePasswordInput" required
+                                placeholder="Ingresa la contraseña..."
+                                class="w-full px-4 py-3 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-barber-blue text-sm font-mono pr-11">
+                            <button type="button" id="toggleSchedulePasswordEye"
+                                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-barber-blue text-sm">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <p id="scheduleAuthError"
+                            class="text-xs text-rose-400 mt-2 font-mono hidden flex items-center gap-1.5">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Contraseña incorrecta. Inténtalo
+                            nuevamente.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button type="button" id="cancelScheduleAuthBtn"
+                            class="w-1/2 py-3 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-semibold text-xs transition">
+                            Cancelar
+                        </button>
+                        <button type="submit"
+                            class="w-1/2 py-3 rounded-xl bg-barber-red hover:bg-barber-red-hover text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-barber-red/30">
+                            <i class="fa-solid fa-unlock-keyhole"></i> Acceder
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: AUTENTICACIÓN FINANZAS (CLAVE: colo13579246810gG) -->
+    <div id="financeAuthModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
+        <div
+            class="bg-dark-900 border border-emerald-500/50 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative animate-scaleUp">
+            <button id="closeFinanceAuthBtn" class="absolute top-5 right-5 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center space-y-3 mb-6">
+                <div
+                    class="w-14 h-14 bg-dark-950 border-2 border-emerald-500/40 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mx-auto shadow-lg shadow-emerald-500/15">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-white tracking-wide">Finanzas & Costos</h3>
+                <p class="text-xs text-gray-400">Ingresa la contraseña de seguridad para acceder a los costos fijos,
+                    inventario y costo inicial.</p>
+            </div>
+            <form id="financeAuthForm" onsubmit="event.preventDefault(); verifyFinancePassword();">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-mono font-semibold text-gray-300 mb-1.5"
+                            for="financePasswordInput">
+                            Contraseña de Seguridad:
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="financePasswordInput" required
+                                placeholder="Ingresa la contraseña..."
+                                class="w-full px-4 py-3 rounded-xl bg-dark-950 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 text-sm font-mono pr-11">
+                            <button type="button" id="toggleFinancePasswordEye"
+                                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-emerald-400 text-sm">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <p id="financeAuthError"
+                            class="text-xs text-rose-400 mt-2 font-mono hidden flex items-center gap-1.5">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Contraseña incorrecta. Inténtalo
+                            nuevamente.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button type="button" id="cancelFinanceAuthBtn"
+                            class="w-1/2 py-3 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-semibold text-xs transition">
+                            Cancelar
+                        </button>
+                        <button type="submit"
+                            class="w-1/2 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-600/30">
+                            <i class="fa-solid fa-unlock-keyhole"></i> Acceder
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: GESTOR DE FINANZAS, COSTOS FIJOS E INVENTARIO -->
+    <div id="financeModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
+        <div
+            class="bg-dark-900 border border-emerald-500/40 rounded-3xl max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl relative overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-gray-800 flex items-center justify-between bg-dark-950">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-dark-900 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-xl shadow-md">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-heading font-bold text-white text-lg">Finanzas, Inventario & Costo Inicial
+                            </h3>
+                            <span
+                                class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold border border-emerald-500/30">CONTROL
+                                FINANCIERO</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Inversión inicial, equipamiento oficial, costos operativos
+                            fijos y punto de equilibrio</p>
+                    </div>
+                </div>
+                <button id="closeFinanceModalBtn" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Tabs -->
+            <div class="flex border-b border-gray-800 bg-dark-950 px-6 gap-6 text-xs font-semibold overflow-x-auto">
+                <button id="tabFinResumenBtn"
+                    class="py-3 border-b-2 border-emerald-500 text-white flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-chart-line text-emerald-400"></i> Resumen & Métricas Clave
+                </button>
+                <button id="tabFinInventarioBtn"
+                    class="py-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-boxes-stacked text-blue-400"></i> Inventario & Costo Inicial (<span
+                        id="financeInvCount">13</span>)
+                </button>
+                <button id="tabFinCostosFijosBtn"
+                    class="py-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-file-invoice-dollar text-rose-400"></i> Costos Fijos Mensuales
+                </button>
+                <button id="tabFinNuevoItemBtn"
+                    class="py-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-plus text-amber-400"></i> Registrar Ítem / Costo
+                </button>
+            </div>
+
+            <!-- Body Scrollable -->
+            <div class="p-6 overflow-y-auto flex-1 space-y-6">
+
+                <!-- 1. TAB: RESUMEN Y MÉTRICAS -->
+                <div id="tabFinResumenContent" class="space-y-6">
+                    <!-- Top 4 KPI Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Costo Inicial Total -->
+                        <div class="finance-kpi-card p-4 rounded-2xl border space-y-2">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span>Costo Inicial Total</span>
+                                <i class="fa-solid fa-coins text-amber-400 text-base"></i>
+                            </div>
+                            <div class="text-2xl font-bold font-mono text-white" id="kpiInitialCost">$4.830.000</div>
+                            <p class="text-[11px] text-gray-400">Inversión inicial total en moto, herramientas e
+                                insumos.</p>
+                            <span
+                                class="inline-block text-[10px] font-mono font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">13
+                                Ítems • 22 Unidades</span>
+                        </div>
+
+                        <!-- Valor de Inventario -->
+                        <div class="finance-kpi-card p-4 rounded-2xl border space-y-2">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span>Valor de Inventario</span>
+                                <i class="fa-solid fa-boxes-stacked text-blue-400 text-base"></i>
+                            </div>
+                            <div class="text-2xl font-bold font-mono text-white" id="kpiInventoryVal">$4.830.000</div>
+                            <p class="text-[11px] text-gray-400">Activos físicos disponibles para prestar el servicio a
+                                domicilio.</p>
+                            <span
+                                class="inline-block text-[10px] font-mono font-bold text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">100%
+                                Equipado</span>
+                        </div>
+
+                        <!-- Costos Fijos Mensuales -->
+                        <div class="finance-kpi-card p-4 rounded-2xl border space-y-2">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span>Costos Fijos / Mes</span>
+                                <i class="fa-solid fa-file-invoice-dollar text-rose-400 text-base"></i>
+                            </div>
+                            <div class="text-2xl font-bold font-mono text-rose-300" id="kpiFixedCosts">$135.000</div>
+                            <p class="text-[11px] text-gray-400">Nafta moto, seguro Honda Wave, mantenimiento y celular.
+                            </p>
+                            <span
+                                class="inline-block text-[10px] font-mono font-bold text-rose-300 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">~$5.192
+                                / día laboral</span>
+                        </div>
+
+                        <!-- Punto de Equilibrio (Break-Even) -->
+                        <div class="finance-kpi-card p-4 rounded-2xl border space-y-2">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span>Punto de Equilibrio</span>
+                                <i class="fa-solid fa-scale-balanced text-emerald-400 text-base"></i>
+                            </div>
+                            <div class="text-2xl font-bold font-mono text-emerald-400" id="kpiBreakEven">14 Cortes</div>
+                            <p class="text-[11px] text-gray-400">Cortes a $10.000/mes para cubrir el 100% de los costos
+                                fijos.</p>
+                            <span
+                                class="inline-block text-[10px] font-mono font-bold text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">&lt;
+                                1 corte cada 2 días</span>
+                        </div>
+                    </div>
+
+                    <!-- Distribución de la Inversión Inicial -->
+                    <div class="p-5 rounded-2xl bg-dark-950 border border-gray-800 space-y-4">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                            <div>
+                                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-pie-chart text-emerald-400"></i> Distribución del Capital
+                                    Inicial ($4.830.000)
+                                </h4>
+                                <p class="text-xs text-gray-400">Desglose porcentual de la inversión realizada para
+                                    poner en marcha la barbería móvil</p>
+                            </div>
+                            <span
+                                class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Total:
+                                $4.830.000</span>
+                        </div>
+
+                        <!-- Barra de Distribución -->
+                        <div class="finance-progress-bar">
+                            <div style="width: 60.0%" class="bg-rose-600"
+                                title="Movilidad (Honda Wave 110cc): $2.900.000 (60.0%)"></div>
+                            <div style="width: 37.3%" class="bg-purple-600"
+                                title="Herramientas & Tijeras: $1.801.000 (37.3%)"></div>
+                            <div style="width: 2.7%" class="bg-emerald-500"
+                                title="Insumos & Accesorios: $129.000 (2.7%)"></div>
+                        </div>
+
+                        <!-- Leyendas de Distribución -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                            <div class="p-3 rounded-xl bg-dark-900 border border-gray-800 flex items-center gap-3">
+                                <span class="w-3.5 h-3.5 rounded-full bg-rose-600 flex-shrink-0"></span>
+                                <div>
+                                    <div class="font-bold text-white">Movilidad (Honda Wave)</div>
+                                    <div class="text-gray-400 font-mono">$2.900.000 • <strong>60.0%</strong></div>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-dark-900 border border-gray-800 flex items-center gap-3">
+                                <span class="w-3.5 h-3.5 rounded-full bg-purple-600 flex-shrink-0"></span>
+                                <div>
+                                    <div class="font-bold text-white">Herramientas & Tijeras</div>
+                                    <div class="text-gray-400 font-mono">$1.801.000 • <strong>37.3%</strong></div>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-dark-900 border border-gray-800 flex items-center gap-3">
+                                <span class="w-3.5 h-3.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                                <div>
+                                    <div class="font-bold text-white">Insumos & Accesorios</div>
+                                    <div class="text-gray-400 font-mono">$129.000 • <strong>2.7%</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulador de Rentabilidad & Retorno de Inversión (ROI) -->
+                    <div class="p-5 rounded-2xl bg-dark-950 border border-gray-800 space-y-4">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                            <div>
+                                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-calculator text-blue-400"></i> Simulador de Ganancia Neta &
+                                    Amortización
+                                </h4>
+                                <p class="text-xs text-gray-400">Calcula cuánto ganas de bolsillo y en cuánto tiempo
+                                    recuperas los $4.830.000 según tus cortes mensuales</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-xs font-mono">
+                                <span class="text-gray-300">Cortes proyectados por mes:</span>
+                                <span class="text-blue-400 font-bold text-sm" id="simCutsValueDisplay">80 turnos / mes
+                                    (~3 por día)</span>
+                            </div>
+                            <input type="range" id="simCutsSlider" min="15" max="150" value="80" step="5"
+                                class="w-full accent-blue-500 cursor-pointer">
+                        </div>
+
+                        <!-- Resultados del Simulador -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center font-mono">
+                            <div class="p-3 rounded-xl bg-dark-900 border border-gray-800">
+                                <div class="text-[10px] text-gray-400 uppercase">Facturación Bruta</div>
+                                <div class="text-base font-bold text-white mt-1" id="simGrossRevenue">$800.000</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-dark-900 border border-gray-800">
+                                <div class="text-[10px] text-gray-400 uppercase">Costos Fijos</div>
+                                <div class="text-base font-bold text-rose-400 mt-1" id="simFixedCosts">$135.000</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/30">
+                                <div class="text-[10px] text-emerald-400 uppercase font-bold">Ganancia Neta / Mes</div>
+                                <div class="text-base font-bold text-emerald-300 mt-1" id="simNetProfit">$665.000</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-dark-900 border border-gray-800">
+                                <div class="text-[10px] text-gray-400 uppercase">Amortización Total</div>
+                                <div class="text-base font-bold text-amber-300 mt-1" id="simRecoveryTime">~7.3 meses
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. TAB: INVENTARIO & COSTO INICIAL (PLANILLA COMPLETA) -->
+                <div id="tabFinInventarioContent" class="space-y-4 hidden">
+                    <!-- Toolbar -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+                        <div class="relative w-full md:w-72">
+                            <i
+                                class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-xs"></i>
+                            <input type="text" id="searchInventoryInput"
+                                placeholder="Buscar producto, marca o modelo..."
+                                class="w-full pl-9 pr-3 py-2 rounded-xl bg-dark-950 border border-gray-700 text-white text-xs font-mono focus:outline-none focus:border-emerald-500">
+                        </div>
+                        <div class="flex gap-2 flex-wrap w-full md:w-auto">
+                            <button type="button" onclick="exportInventoryJSON()"
+                                class="px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs text-gray-300 border border-gray-700 flex items-center gap-1.5 font-mono">
+                                <i class="fa-solid fa-file-export text-emerald-400"></i> Exportar
+                            </button>
+                            <button type="button" onclick="resetOriginalInventory()"
+                                class="px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs text-gray-400 hover:text-amber-300 border border-gray-700 flex items-center gap-1.5 font-mono"
+                                title="Restablece los 13 productos exactos de la planilla original">
+                                <i class="fa-solid fa-rotate-left"></i> Restaurar Planilla
+                            </button>
+                            <button type="button" onclick="switchFinanceTab('tabFinNuevoItem')"
+                                class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-plus"></i> Agregar Ítem
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter Pills -->
+                    <div class="flex gap-2 flex-wrap text-xs" id="invCategoryFilterPills">
+                        <button type="button" onclick="filterInventoryByCategory('all')"
+                            class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold"
+                            data-cat="all">Todos (13)</button>
+                        <button type="button" onclick="filterInventoryByCategory('Maquinaria')"
+                            class="px-3 py-1 rounded-full bg-dark-950 text-gray-400 hover:text-white border border-gray-800"
+                            data-cat="Maquinaria">Maquinaria</button>
+                        <button type="button" onclick="filterInventoryByCategory('Herramientas')"
+                            class="px-3 py-1 rounded-full bg-dark-950 text-gray-400 hover:text-white border border-gray-800"
+                            data-cat="Herramientas">Herramientas</button>
+                        <button type="button" onclick="filterInventoryByCategory('Accesorios')"
+                            class="px-3 py-1 rounded-full bg-dark-950 text-gray-400 hover:text-white border border-gray-800"
+                            data-cat="Accesorios">Accesorios</button>
+                        <button type="button" onclick="filterInventoryByCategory('Insumos')"
+                            class="px-3 py-1 rounded-full bg-dark-950 text-gray-400 hover:text-white border border-gray-800"
+                            data-cat="Insumos">Insumos</button>
+                        <button type="button" onclick="filterInventoryByCategory('Movilidad')"
+                            class="px-3 py-1 rounded-full bg-dark-950 text-gray-400 hover:text-white border border-gray-800"
+                            data-cat="Movilidad">Movilidad</button>
+                    </div>
+
+                    <!-- Official Sheet Table -->
+                    <div class="overflow-x-auto rounded-2xl border border-gray-800">
+                        <table class="w-full text-left text-xs text-gray-300">
+                            <thead
+                                class="bg-dark-950 text-gray-400 uppercase text-[10px] font-mono tracking-wider border-b border-gray-800">
+                                <tr>
+                                    <th class="p-3.5">Producto</th>
+                                    <th class="p-3.5">Descripción / Modelo</th>
+                                    <th class="p-3.5 text-center">Cantidad</th>
+                                    <th class="p-3.5 text-right">Precio Unit. (p/u)</th>
+                                    <th class="p-3.5 text-right">Precio Total (p/T)</th>
+                                    <th class="p-3.5 text-center">Categoría</th>
+                                    <th class="p-3.5 text-right">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventoryTableBody" class="divide-y divide-gray-800">
+                                <!-- Injected by JS -->
+                            </tbody>
+                            <tfoot id="inventoryTableFoot"
+                                class="bg-dark-950 border-t-2 border-emerald-500/40 font-mono font-bold text-white">
+                                <!-- Injected by JS -->
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. TAB: COSTOS FIJOS MENSUALES -->
+                <div id="tabFinCostosFijosContent" class="space-y-6 hidden">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 p-4 rounded-2xl bg-dark-950 border border-rose-500/30">
+                        <div>
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-gas-pump text-rose-400"></i> Gastos Operativos Fijos Mensuales
+                            </h4>
+                            <p class="text-xs text-gray-400">Gastos recurrentes para mantener el servicio a domicilio en
+                                marcha con la Honda Wave 110cc</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-gray-400 font-mono block">Total Gastos Fijos:</span>
+                            <span class="text-xl font-bold font-mono text-rose-400" id="fixedCostsTotalDisplay">$135.000
+                                / mes</span>
+                        </div>
+                    </div>
+
+                    <!-- Cards of Fixed Costs -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="fixedCostsContainer">
+                        <!-- Injected by JS -->
+                    </div>
+
+                    <!-- Break-Even Detail Box -->
+                    <div class="p-5 rounded-2xl bg-dark-950 border border-gray-800 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Fórmula de Punto de Equilibrio (Break-Even)
+                                </h5>
+                                <p class="text-xs text-gray-400">Relación directa con tu tarifa actual de corte clásico
+                                    ($10.000)</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-3.5 rounded-xl bg-dark-900 border border-gray-800 text-xs font-mono text-gray-300 space-y-1.5">
+                            <p class="text-emerald-400 font-bold">Cortes necesarios = Costo Fijo Total ($135.000) ÷
+                                Precio por Corte ($10.000) = 14 turnos al mes</p>
+                            <p class="text-gray-400">→ Con solo <strong>3 a 4 turnos por semana</strong> (menos de 1
+                                turno cada 2 días), todos los costos fijos quedan 100% saldados.</p>
+                            <p class="text-gray-400">→ A partir del <strong>turno número 15 en adelante</strong>, cada
+                                peso generado es beneficio neto para tu bolsillo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. TAB: REGISTRAR ÍTEM / COSTO -->
+                <div id="tabFinNuevoItemContent" class="space-y-6 hidden">
+                    <div class="max-w-xl mx-auto space-y-6">
+
+                        <!-- Toggle Form Type -->
+                        <div class="flex rounded-xl bg-dark-950 border border-gray-800 p-1 text-xs font-mono font-bold">
+                            <button type="button" id="formTypeInvBtn" onclick="setNewItemType('inventory')"
+                                class="flex-1 py-2.5 rounded-lg bg-emerald-600 text-white flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-boxes-stacked"></i> Nuevo Ítem de Inventario
+                            </button>
+                            <button type="button" id="formTypeCostBtn" onclick="setNewItemType('fixedCost')"
+                                class="flex-1 py-2.5 rounded-lg text-gray-400 hover:text-white flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-file-invoice-dollar"></i> Nuevo Costo Fijo
+                            </button>
+                        </div>
+
+                        <!-- Form: Inventory Item -->
+                        <form id="formNewInventoryItem"
+                            class="p-5 rounded-2xl bg-dark-950 border border-gray-800 space-y-4">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-plus text-emerald-400"></i> Registrar Ítem en Inventario / Capital
+                                Inicial
+                            </h4>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1" for="newInvName">Nombre
+                                    del Producto (*)</label>
+                                <input type="text" id="newInvName" required
+                                    placeholder="Ej: Navajín de acero / Clipper extra"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white text-xs focus:outline-none focus:border-emerald-500">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                        for="newInvDesc">Descripción / Marca / Modelo (*)</label>
+                                    <input type="text" id="newInvDesc" required
+                                        placeholder="Ej: VGR / Jaguar / Inalámbrica"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white text-xs focus:outline-none focus:border-emerald-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                        for="newInvCategory">Categoría</label>
+                                    <select id="newInvCategory"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white text-xs focus:outline-none focus:border-emerald-500">
+                                        <option value="Maquinaria">Maquinaria</option>
+                                        <option value="Herramientas">Herramientas</option>
+                                        <option value="Accesorios">Accesorios</option>
+                                        <option value="Insumos">Insumos</option>
+                                        <option value="Movilidad">Movilidad</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                        for="newInvQty">Cantidad (*)</label>
+                                    <input type="number" id="newInvQty" required min="1" value="1"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white font-mono text-xs focus:outline-none focus:border-emerald-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                        for="newInvUnitPrice">Precio Unitario ($ p/u) (*)</label>
+                                    <input type="number" id="newInvUnitPrice" required min="0" step="500"
+                                        placeholder="Ej: 35000"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white font-mono text-xs focus:outline-none focus:border-emerald-500">
+                                </div>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-600/20">
+                                <i class="fa-solid fa-floppy-disk"></i> Guardar en Inventario
+                            </button>
+                        </form>
+
+                        <!-- Form: Fixed Cost -->
+                        <form id="formNewFixedCost"
+                            class="p-5 rounded-2xl bg-dark-950 border border-gray-800 space-y-4 hidden">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-plus text-rose-400"></i> Registrar Nuevo Costo Fijo Mensual
+                            </h4>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1" for="newCostName">Concepto
+                                    / Gasto (*)</label>
+                                <input type="text" id="newCostName" required
+                                    placeholder="Ej: Seguro contra accidentes / Desinfección"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white text-xs focus:outline-none focus:border-rose-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                    for="newCostDesc">Descripción breve</label>
+                                <input type="text" id="newCostDesc" placeholder="Ej: Cobertura médica o service mensual"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white text-xs focus:outline-none focus:border-rose-500">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                        for="newCostAmount">Monto Mensual ($) (*)</label>
+                                    <input type="number" id="newCostAmount" required min="100" step="500"
+                                        placeholder="Ej: 20000"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white font-mono text-xs focus:outline-none focus:border-rose-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                        for="newCostPeriod">Periodicidad</label>
+                                    <input type="text" id="newCostPeriod" value="Mensual" readonly
+                                        class="w-full px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-gray-400 font-mono text-xs cursor-not-allowed">
+                                </div>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-rose-600/20">
+                                <i class="fa-solid fa-floppy-disk"></i> Guardar Costo Fijo
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div
+                class="p-4 border-t border-gray-800 bg-dark-950 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
+                <div class="text-gray-400 font-mono">
+                    Protegido con clave oficial: <span class="text-white">colo13579246810gG</span>
+                </div>
+                <button type="button" id="closeFinanceModalBtn2"
+                    class="px-6 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 font-semibold transition">
+                    Cerrar Panel
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL: GESTOR DE HORARIOS POR DÍA -->
+    <div id="scheduleManagerModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
+        <div
+            class="bg-dark-900 border border-gray-700 rounded-3xl max-w-3xl w-full max-h-[92vh] flex flex-col shadow-2xl relative overflow-hidden">
+            <!-- Header -->
+            <div class="p-6 border-b border-gray-800 flex items-center justify-between bg-dark-950">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-dark-900 border border-barber-blue/40 text-barber-blue flex items-center justify-center text-xl shadow-md">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-heading font-bold text-white text-lg">Modificar Horarios por Fecha</h3>
+                            <span
+                                class="px-2 py-0.5 rounded bg-barber-blue/20 text-blue-300 text-[10px] font-mono font-bold border border-barber-blue/30">CONTROL
+                                BARBERO</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Habilita, bloquea o agrega horarios específicos para cualquier
+                            fecha</p>
+                    </div>
+                </div>
+                <button id="closeScheduleManagerBtn" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Body -->
+            <div class="p-6 overflow-y-auto flex-1 space-y-6">
+                <!-- 1. Date Selector -->
+                <div class="p-4 rounded-2xl bg-dark-950 border border-gray-800 space-y-3">
+                    <label class="block text-xs font-mono font-bold text-barber-blue uppercase tracking-wider">
+                        1. Selecciona la Fecha a Modificar:
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+                        <input type="date" id="manageScheduleDatePicker"
+                            class="px-4 py-2.5 rounded-xl bg-dark-900 border border-gray-700 text-white font-mono text-sm focus:outline-none focus:border-barber-blue">
+                        <div class="flex gap-2 flex-wrap">
+                            <button type="button" onclick="setManagerDateOffset(0)"
+                                class="px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs text-gray-300 font-mono">Hoy</button>
+                            <button type="button" onclick="setManagerDateOffset(1)"
+                                class="px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs text-gray-300 font-mono">Mañana</button>
+                            <button type="button" onclick="setManagerDateOffset(2)"
+                                class="px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs text-gray-300 font-mono">+2
+                                Días</button>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center justify-between pt-2 border-t border-gray-800 gap-2">
+                        <span class="text-xs text-gray-300">Día seleccionado: <strong id="manageScheduleDateHuman"
+                                class="text-white font-mono"></strong></span>
+                        <!-- Day Open/Closed Toggle -->
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="manageDayClosedToggle" class="sr-only peer">
+                            <div
+                                class="w-11 h-6 bg-dark-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-barber-red relative">
+                            </div>
+                            <span class="text-xs font-mono text-gray-300" id="manageDayClosedLabel">Día
+                                Habilitado</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. Slot Grid for Selected Date -->
+                <div id="manageSlotsSection" class="space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <div>
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <span>2. Horarios para esta fecha</span>
+                                <span
+                                    class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Clic
+                                    para habilitar/bloquear</span>
+                            </h4>
+                            <p class="text-[11px] text-gray-400">Azul = Habilitado para clientes | Rojo = Bloqueado/No
+                                disponible</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button type="button" onclick="enableAllManagerSlots()"
+                                class="px-2.5 py-1 rounded-lg bg-dark-800 hover:bg-dark-700 text-[11px] text-blue-300 font-mono border border-gray-700">
+                                Habilitar Todos
+                            </button>
+                            <button type="button" onclick="disableAllManagerSlots()"
+                                class="px-2.5 py-1 rounded-lg bg-dark-800 hover:bg-dark-700 text-[11px] text-rose-300 font-mono border border-gray-700">
+                                Bloquear Todos
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Grid of Interactive Slot Buttons -->
+                    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5" id="managerSlotsContainer">
+                        <!-- Injected by JS -->
+                    </div>
+
+                    <!-- Add custom slot form -->
+                    <div
+                        class="p-3.5 rounded-xl bg-dark-950 border border-gray-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-plus text-barber-blue text-xs"></i>
+                            <span class="text-xs text-gray-300 font-semibold">Agregar horario especial para este
+                                día:</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="time" id="newCustomSlotInput"
+                                class="px-3 py-1.5 rounded-lg bg-dark-900 border border-gray-700 text-white font-mono text-xs focus:outline-none focus:border-barber-blue">
+                            <button type="button" onclick="addCustomManagerSlot()"
+                                class="px-3 py-1.5 rounded-lg bg-barber-blue hover:bg-barber-blue-hover text-white font-bold font-mono text-xs transition">
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div
+                class="p-5 border-t border-gray-800 bg-dark-950 flex flex-col sm:flex-row justify-between items-center gap-3">
+                <button type="button" onclick="resetManagerSlotsToDefault()"
+                    class="text-xs text-gray-400 hover:text-rose-400 transition flex items-center gap-1.5 font-mono">
+                    <i class="fa-solid fa-rotate-left"></i> Restablecer a horarios originales
+                </button>
+                <div class="flex gap-3 w-full sm:w-auto">
+                    <button type="button" id="closeScheduleManagerBtn2"
+                        class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-300 text-xs font-semibold transition">
+                        Cerrar
+                    </button>
+                    <button type="button" onclick="saveManagerSchedule()"
+                        class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl btn-barber-primary text-xs transition flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-floppy-disk"></i> Guardar Cambios
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: PANEL DE GESTIÓN DEL BARBERO (ADMIN) -->
+    <div id="adminModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
+        <div
+            class="bg-dark-900 border border-gray-700 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl relative overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-dark-950 border border-barber-red/40 text-barber-red flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-white text-lg">Panel de Control del Barbero</h3>
+                        <p class="text-xs text-gray-400">Control de reservas, verificación de señas y configuración
+                            bancaria</p>
+                    </div>
+                </div>
+                <button id="closeAdminBtn" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Tabs -->
+            <div class="flex border-b border-gray-800 bg-dark-950 px-6 gap-6 text-xs font-semibold">
+                <button id="tabReservasBtn"
+                    class="py-3 border-b-2 border-barber-red text-white flex items-center gap-2">
+                    <i class="fa-solid fa-list-check"></i> Turnos Agendados (<span id="totalBookingsCount">0</span>)
+                </button>
+                <button id="tabConfigBtn"
+                    class="py-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-2">
+                    <i class="fa-solid fa-gear"></i> Ajustes de Seña, Teléfono y Precios
+                </button>
+                <button type="button" id="adminGoFinanceBtn"
+                    class="py-3 border-b-2 border-transparent text-emerald-400 hover:text-emerald-300 flex items-center gap-2 ml-auto">
+                    <i class="fa-solid fa-chart-pie"></i> Ver Costos & Inventario
+                </button>
+            </div>
+
+            <!-- Tab Content: Turnos Agendados -->
+            <div id="tabReservasContent" class="p-6 overflow-y-auto flex-1 space-y-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div class="flex items-center gap-2">
+                        <input type="text" id="filterAdminInput" placeholder="Buscar por cliente o teléfono..."
+                            class="px-3 py-1.5 rounded-lg bg-dark-950 border border-gray-700 text-xs text-white focus:outline-none focus:border-barber-blue font-mono">
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="btnExportJSON"
+                            class="px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs text-gray-200 border border-gray-700 flex items-center gap-1.5 font-mono">
+                            <i class="fa-solid fa-file-export"></i> Descargar Datos
+                        </button>
+                        <button id="btnClearAllBookings"
+                            class="px-3 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-xs text-rose-400 border border-rose-500/30 flex items-center gap-1.5 font-mono">
+                            <i class="fa-solid fa-trash"></i> Vaciar Historial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bookings Table / List -->
+                <div class="overflow-x-auto rounded-xl border border-gray-800">
+                    <table class="w-full text-left text-xs text-gray-300">
+                        <thead
+                            class="bg-dark-950 text-gray-400 uppercase text-[10px] font-mono tracking-wider border-b border-gray-800">
+                            <tr>
+                                <th class="p-3">ID / Fecha</th>
+                                <th class="p-3">Cliente</th>
+                                <th class="p-3">Servicio / Dirección</th>
+                                <th class="p-3">Monto & Saldo</th>
+                                <th class="p-3">Estado Seña</th>
+                                <th class="p-3">Estado Visita</th>
+                                <th class="p-3 text-right">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminBookingsTableBody" class="divide-y divide-gray-800">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab Content: Configuración (Teléfono, Precios y Datos de Seña) -->
+            <div id="tabConfigContent" class="p-6 overflow-y-auto flex-1 space-y-6 hidden">
+                <div class="max-w-xl space-y-6">
+
+                    <!-- Configuración Bancaria y de Seña -->
+                    <div class="p-4 rounded-2xl bg-dark-950 border border-barber-blue/30 space-y-4">
+                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-building-columns text-barber-blue"></i> Datos de Cobro para Señas
+                            Anticancelación
+                        </h4>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1" for="configBarberAlias">Alias
+                                de Mercado Pago / Banco</label>
+                            <input type="text" id="configBarberAlias" placeholder="Ej: barbero.domicilio.mp"
+                                class="w-full px-4 py-2 rounded-xl bg-dark-900 border border-gray-700 text-white text-sm font-mono focus:outline-none focus:border-barber-blue">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1" for="configBarberCbu">CBU /
+                                CVU</label>
+                            <input type="text" id="configBarberCbu" placeholder="Ej: 0000003100084729104829"
+                                class="w-full px-4 py-2 rounded-xl bg-dark-900 border border-gray-700 text-white text-sm font-mono focus:outline-none focus:border-barber-blue">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                for="configBarberHolder">Titular de la Cuenta</label>
+                            <input type="text" id="configBarberHolder" placeholder="Ej: Leonardo Gómez"
+                                class="w-full px-4 py-2 rounded-xl bg-dark-900 border border-gray-700 text-white text-sm focus:outline-none focus:border-barber-blue">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1"
+                                for="configDepositPercent">Porcentaje de Seña Requerido (%)</label>
+                            <input type="number" min="10" max="100" id="configDepositPercent" placeholder="30"
+                                class="w-28 px-4 py-2 rounded-xl bg-dark-900 border border-gray-700 text-white text-sm font-mono focus:outline-none focus:border-barber-blue">
+                            <span class="text-xs text-gray-400 ml-2">% del valor total del servicio</span>
+                        </div>
+
+                        <button id="btnSaveBankingConfig"
+                            class="px-5 py-2.5 rounded-xl btn-barber-primary text-xs font-bold transition">
+                            Guardar Datos Bancarios y Seña
+                        </button>
+                    </div>
+
+                    <!-- Teléfono y Nombre del Barbero -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1" for="configBarberPhone">
+                                Número de WhatsApp del Barbero (código país, sin espacios ni '+')
+                            </label>
+                            <div class="flex gap-2">
+                                <input type="text" id="configBarberPhone" placeholder="Ej: 5493757632529"
+                                    class="w-full px-4 py-2 rounded-xl bg-dark-950 border border-gray-700 text-white text-sm font-mono focus:outline-none focus:border-barber-blue">
+                                <button id="btnSaveConfigPhone"
+                                    class="px-4 py-2 rounded-xl bg-dark-800 hover:bg-dark-700 text-white font-bold text-xs border border-gray-700">Guardar</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1" for="configBarberName">Nombre
+                                de la Barbería</label>
+                            <input type="text" id="configBarberName" placeholder="VIP Barber Home"
+                                class="w-full px-4 py-2 rounded-xl bg-dark-950 border border-gray-700 text-white text-sm focus:outline-none focus:border-barber-blue">
+                        </div>
+                    </div>
+
+                    <!-- Precios -->
+                    <div class="pt-4 border-t border-gray-800">
+                        <h4 class="text-sm font-bold text-white mb-3">Precios de los Servicios</h4>
+                        <div class="space-y-3" id="configPricesList">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON (+54 3757 632529) -->
+    <a href="https://wa.me/5493757632529?text=Hola!%20Quisiera%20consultar%20por%20el%20servicio%20de%20barber%C3%ADa%20a%20domicilio"
+        target="_blank" id="floatingWhatsAppBtn" title="Chatear por WhatsApp (+54 3757 632529)"
+        class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center text-2xl shadow-2xl shadow-[#25D366]/40 hover:scale-110 active:scale-95 transition-all duration-300 wa-floating-pulse group">
+        <i class="fa-brands fa-whatsapp"></i>
+        <!-- Tooltip -->
+        <span
+            class="absolute right-16 px-3 py-1.5 rounded-xl bg-dark-900 border border-gray-700 text-white text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg font-sans">
+            ¡Escríbenos por WhatsApp!
+        </span>
+    </a>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toastContainer" class="fixed bottom-24 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
